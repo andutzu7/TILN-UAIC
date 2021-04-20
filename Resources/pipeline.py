@@ -1,7 +1,7 @@
-import zeep
 import re
 import os
 import json
+import zeep
 import nltk
 from nltk.corpus import stopwords
 

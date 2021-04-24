@@ -80,11 +80,12 @@ def pipeline(text):
     filtered_article = filter_stopwords(sentences,stopwerdz)
     filtered_article_string = convert_to_string(filtered_article)
 
-    print(filtered_article_string)
+    return [filtered_article_string]
 
-    # return?
+   
 
 if __name__ == '__main__':
 
     text = "Regina Elisabeta a II-a a Marii Britanii a fost nevoită să stea singură în timpul funeraliilor, din cauza restricţiilor impuse de pandemia de coronavirus. Camerele de filmare nu au putut capta expresia chipului său, regina a stat mai mult cu capul plecat.Alţi membri ai casei regale care au apărut în imagini aveau feţele întristate. Prinţul Edward, cel mai mic dintre copiii reginei şi ai prinţului Philip, a fost văzut punându-şi mâna pe frunte în timp ce corul intona imnuri religioase. El a fost văzut apoi fixând de la distanţă sicriul tatălui său.Fiecare membru al casei regale - mai ales cei special invitaţi - au purtat haine de doliu de culoare închisă şi măşti sanitare negre.Ei au păstrat distanţa unii de ceilalți și în așezarea pe scaunele din interiorul capelei St.George, pentru a respecta restricţiile impuse de pandemia de coronavirus."
-    pipeline(text)
+    print(pipeline(text))
+    

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState  } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header";
 import ShowTextForm from "./components/ShowTextForm";
@@ -14,32 +14,32 @@ const App = () => {
 
   // Verify Text
   const verifyText = async (text) => {
-    const res = await fetch("http://localhost:5000/tasks", {
+    const res = await fetch("http://localhost:5000/", {
       method: "POST",
+      body: JSON.stringify(text) ,
       headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(text),
-    });
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    }
+       });
 
     const data = await res.json();
+    console.log(JSON.stringify(text))
+    setResponse([data]);
 
-    setResponse([...response, data]);
+    
   };
 
   // Verify Link
   const verifyLink = async (text) => {
-    const res = await fetch("http://localhost:5000/tasks", {
+    const res = await fetch("http://localhost:5000/", {
       method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(text),
     });
 
     const data = await res.json();
 
-    setResponse([...response, data]);
+    console.log(data)
+    setResponse([data]);
   };
 
   return (

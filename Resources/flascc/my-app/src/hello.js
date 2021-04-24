@@ -16,6 +16,6 @@ export default class Welcome extends React.Component {
     }
 
     render() {
-        return <h1 key={'editor'}>{this.state.rows}</h1>;
+        return <h1 key={'editor'}>{this.state.rows + 'iliescu'}</h1>;
     }
 }

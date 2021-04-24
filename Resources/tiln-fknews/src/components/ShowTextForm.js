@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ShowTextForm = ({ onAdd }) => {
+const ShowTextForm = ({ onAdd,mode }) => {
   const [text, setText] = useState("");
 
   const onSubmit = (e) => {
@@ -11,7 +11,7 @@ const ShowTextForm = ({ onAdd }) => {
       return;
     }
 
-    onAdd({ text });
+    onAdd({ text }, mode);
     setText("");
   };
 

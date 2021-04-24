@@ -16,7 +16,10 @@ const App = () => {
   const verifyText = async (text) => {
     const res = await fetch("http://localhost:5000/", {
       method: "POST",
-      body: JSON.stringify(text) ,
+      body: JSON.stringify({
+        type:'string', 
+        text:text
+      }) ,
       headers: {
       'Content-Type': 'application/json'
       // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -30,17 +33,27 @@ const App = () => {
     
   };
 
-  // Verify Link
+  // Verify LINK
   const verifyLink = async (text) => {
     const res = await fetch("http://localhost:5000/", {
       method: "POST",
-    });
+      body: JSON.stringify({
+        type:'link', 
+        text:text
+      }) ,
+      headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    }
+       });
 
     const data = await res.json();
-
-    console.log(data)
+    console.log(JSON.stringify(text))
     setResponse([data]);
+
+    
   };
+
 
   return (
     <Router>

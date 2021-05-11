@@ -11,7 +11,7 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 
-@cross_origin(support_credentials=True)
+# @cross_origin(support_credentials=True)
 @app.route("/",methods=['POST'])
 def helloWorld():
   msg_type = request.get_json().get('type')

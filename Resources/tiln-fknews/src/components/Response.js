@@ -1,13 +1,15 @@
 import React from "react";
+import imgSrc1 from "../images/True.png";
+import imgSrc2 from "../images/False.png";
 
 const Response = (response) => {
   return (
-    <div className="response">
+    <div>
       {response.response[0].text}
-      {response.response[0].text == "true" ? (
-        <img src={require("../images/True.png")} alt="True Response" />
+      {response.response[0].text === "true" ? (
+        <img className="response" src={imgSrc1} alt={"True Response"} />
       ) : (
-        <img src={require("../images/False.png")} alt="False Response" />
+        <img className="response" src={imgSrc2} alt={"False Response"} />
       )}
     </div>
   );

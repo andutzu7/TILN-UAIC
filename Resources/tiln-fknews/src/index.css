@@ -111,8 +111,8 @@ h1 {
 }
 
 .response {
-  max-width: 300px;
-  min-height: 300px;
+  width: 100px;
+  height: 50px;
 }
 
 footer {
